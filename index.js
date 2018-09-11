@@ -1,15 +1,11 @@
 //function isOpen(c) - returns true if c === [, c ==={, or c===(, false otherwise
 function isOpen(char) {
-  switch(char) {
-    case "(":
-      return true;
-    case "[":
-      return true;
-    case "{":
-      return true;
-    default:
-      return false;
+  if(char != null) {
+    return char.match(/[([{]/g)
+  } else {
+    return false;
   }
+
 }
 
 //function isClosed(c) - returns true if c === ], c ===}, or c===), false otherwise
@@ -54,7 +50,7 @@ function checkCharacters(string) {
   //remove white space from string
   let str = string.replace(/ /g,'');
   //check for illegal characters
-  
+
 	for(let char of str) {
     //check for opening char and push into array if true
 		if (isOpen(char)) {
