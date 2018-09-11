@@ -42,10 +42,12 @@ function isMatch(first, second) {
 
 function checkCharacters(string) {
   let arr = [];
+  //check for illegal characters
+  if(string.match(/[^ ()[\]{}]/g)) {
+    return "Error: Invalid character detected. Please try again using only '()[]{}' characters.";
+  }
   //remove white space from string
   let str = string.replace(/ /g,'');
-  //check for illegal characters
-
 	for(let char of str) {
     //check for opening char and push into array if true
 		if (isOpen(char)) {

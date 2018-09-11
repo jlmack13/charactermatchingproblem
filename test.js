@@ -4,6 +4,10 @@ test('checkCharacters function exists', () => {
     expect(typeof checkCharacters).toEqual('function');
 });
 
+test('check that invalid characters return an error message', () => {
+    expect(checkCharacters("(i[")).toMatch("Error: Invalid character detected. Please try again using only '()[]{}' characters.")
+});
+
 test('1st test should be true with input: "( { [ ] } )".', () => {
     expect(checkCharacters("( { [ ] } )")).toBeTruthy()  
 });
