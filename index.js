@@ -10,15 +10,10 @@ function isOpen(char) {
 
 //function isClosed(c) - returns true if c === ], c ===}, or c===), false otherwise
 function isClosed(char) {
-  switch(char) {
-    case ")":
-      return true;
-    case "]":
-      return true;
-    case "}":
-      return true;
-    default:
-      return false;
+  if(char != null) {
+    return char.match(/[)\]}]/g)
+  } else {
+    return false;
   }
 }
 
